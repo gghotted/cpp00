@@ -43,7 +43,7 @@ void PhoneBook::print_all(void) {
 
 void PhoneBook::print_one(void) {
   std::cout << "select index: ";
-  int	index;
+  int index;
   if (!(std::cin >> index))
     this->exit("exit by EOF");
   if (index < 0 || index >= this->size) {
