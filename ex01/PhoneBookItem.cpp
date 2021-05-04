@@ -34,12 +34,12 @@ void		PhoneBookItem::print_column(std::string str, std::string end)
 	if (str.length() > 10)
 		str.replace(9, 1, ".");
 	std::cout << std::setfill(' ') << std::setw(10) << std::right;
-	std::cout << str << end;
+	std::cout << str.substr(0, 10) << end;
 }
 
 void		PhoneBookItem::print_keyval(std::string key, std::string val)
 {
-	std::cout << std::setfill(' ') << std::setw(14) << std::left;
+	std::cout << std::setfill(' ') << std::setw(15) << std::left;
 	std::cout << key;
 	std::cout << ": " << val << "\n";
 }
