@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gypark <gypark@student.42.fr>              +#+  +:+       +#+        */
+/*   By: gypark <gypark@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/03 12:40:14 by gypark            #+#    #+#             */
-/*   Updated: 2021/05/04 16:14:49 by gypark           ###   ########.fr       */
+/*   Updated: 2021/05/05 01:47:48 by gypark           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 char *touppers(char *s)
 {
   size_t len = strlen(s);
-
-  for (int i=0; i < len; i++)
+  for (size_t i=0; i < len; i++)
     s[i] = toupper(s[i]);
   return (s);
 }
