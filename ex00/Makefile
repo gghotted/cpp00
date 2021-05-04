@@ -1,3 +1,5 @@
+CXX = clang++
+CPPFLAGS = -Wall -Wextra -Werror
 NAME = megaphone
 SRCS = megaphone.cpp
 OBJS = $(SRCS:.cpp=.o)
@@ -5,10 +7,7 @@ OBJS = $(SRCS:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	clang++ -Wall -Wextra -Werror $^ -o $@
-
-%.o: %.c
-	clang++ -Wall -Wextra -Werror -c $< -o $@
+	$(CXX) $(CPPFLAGS) $^ -o $@
 
 clean:
 	rm -rf $(OBJS)
