@@ -4,7 +4,6 @@ int main(void)
 {
   PhoneBook phoneBook;
   std::string cmd;
-
   while (1)
   {
     std::cout << "cmd: ";
@@ -19,4 +18,5 @@ int main(void)
     else
       std::cout << "invalid command! try again!\n";
   }
+  return 0;
 }
