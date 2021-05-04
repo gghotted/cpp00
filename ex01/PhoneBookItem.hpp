@@ -19,11 +19,11 @@ class PhoneBookItem
                 std::string	darkestSecret);
   ~PhoneBookItem(void);
 
-  void print_summary(int index);
-  void print_detail(void);
+  void printSummary(int index);
+  void printDetail(void);
 
-  static void print_column(std::string str, std::string end="\n");
-  static void print_keyval(std::string key, std::string val);
+  static void printColumn(std::string str, std::string end="\n");
+  static void printKeyVal(std::string key, std::string val);
 
  private:
   std::string firstName;

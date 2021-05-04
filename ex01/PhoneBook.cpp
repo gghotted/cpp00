@@ -6,7 +6,7 @@ PhoneBook::PhoneBook(void) {
 
 PhoneBook::~PhoneBook(void) {}
 
-std::string PhoneBook::get_input(const char *msg) {
+std::string PhoneBook::getInput(const char *msg) {
   std::cout << msg;
   std::string input;
   if (!(std::cin >> input))
@@ -19,39 +19,39 @@ void PhoneBook::add(void) {
     std::cout << "PhoneBook is full\n";
     return ;
   }
-  this->items[this->size++] = PhoneBookItem(this->get_input("firstName: "),
-                                            this->get_input("lastName: "),
-                                            this->get_input("nickname: "),
-                                            this->get_input("login: "),
-                                            this->get_input("postalAddress: "),
-                                            this->get_input("email: "),
-                                            this->get_input("phoneNumber: "),
-                                            this->get_input("birthday: "),
-                                            this->get_input("favoriteMeal: "),
-                                            this->get_input("underwearColor: "),
-                                            this->get_input("darkestSecret: "));
+  this->items[this->size++] = PhoneBookItem(this->getInput("firstName: "),
+                                            this->getInput("lastName: "),
+                                            this->getInput("nickname: "),
+                                            this->getInput("login: "),
+                                            this->getInput("postalAddress: "),
+                                            this->getInput("email: "),
+                                            this->getInput("phoneNumber: "),
+                                            this->getInput("birthday: "),
+                                            this->getInput("favoriteMeal: "),
+                                            this->getInput("underwearColor: "),
+                                            this->getInput("darkestSecret: "));
 }
 
-void PhoneBook::print_all(void) {
-  PhoneBookItem::print_column("Index", "|");
-  PhoneBookItem::print_column("FirstName", "|");
-  PhoneBookItem::print_column("LastName", "|");
-  PhoneBookItem::print_column("Nickname");
+void PhoneBook::printAll(void) {
+  PhoneBookItem::printColumn("Index", "|");
+  PhoneBookItem::printColumn("FirstName", "|");
+  PhoneBookItem::printColumn("LastName", "|");
+  PhoneBookItem::printColumn("Nickname");
   for (int i=0; i < this->size; i++)
-    this->items[i].print_summary(i);
+    this->items[i].printSummary(i);
 }
 
-void PhoneBook::print_one(void) {
+void PhoneBook::printOne(void) {
   std::cout << "select index: ";
   int index;
   if (!(std::cin >> index))
     this->exit("exit by EOF");
   if (index < 0 || index >= this->size) {
     std::cout << "invalid index! try again!\n";
-    this->print_one();
+    this->printOne();
     return ;
   }
-  this->items[index].print_detail();
+  this->items[index].printDetail();
 }
 
 void PhoneBook::search(void) {
@@ -59,8 +59,8 @@ void PhoneBook::search(void) {
     std::cout << "phonebook is empty!\n";
     return ;
   }
-  this->print_all();
-  this->print_one();
+  this->printAll();
+  this->printOne();
 }
 
 void PhoneBook::exit(const char *msg) {
