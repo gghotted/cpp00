@@ -17,6 +17,7 @@ private:
 	std::string	underwearColor;
 	std::string	darkestSecret;
 public:
+	PhoneBookItem(void);
 	PhoneBookItem(
 		std::string	firstName,
 		std::string	lastName,

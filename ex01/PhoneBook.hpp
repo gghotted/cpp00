@@ -14,6 +14,6 @@ private:
 	void			print_one(void);
 	std::string		get_input(const char *msg);
 
-	PhoneBookItem	*items[8];
+	PhoneBookItem	items[8];
 	int				size;
 };
