@@ -1,3 +1,6 @@
+#ifndef PHONE_BOOK_ITEM_HPP
+#define PHONE_BOOK_ITEM_HPP
+
 #include <string>
 #include <iomanip>
 #include <iostream>
@@ -38,3 +41,5 @@ class PhoneBookItem
   std::string underwearColor;
   std::string darkestSecret;
 };
+
+#endif

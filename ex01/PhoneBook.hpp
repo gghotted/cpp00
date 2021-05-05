@@ -1,3 +1,6 @@
+#ifndef PHONE_BOOK_HPP
+#define PHONE_BOOK_HPP
+
 #include <iostream>
 #include "PhoneBookItem.hpp"
 
@@ -19,3 +22,5 @@ class PhoneBook
   PhoneBookItem items[8];
   int size;
 };
+
+#endif
