@@ -9,7 +9,8 @@ PhoneBook::~PhoneBook(void) {}
 std::string PhoneBook::getInput(const char *msg) {
   std::cout << msg;
   std::string input;
-  if (!(std::cin >> input))
+  std::getline(std::cin, input);
+  if (std::cin.eof())
     this->exit("\nexit by EOF");
   return input;
 }
@@ -42,11 +43,10 @@ void PhoneBook::printAll(void) {
 }
 
 void PhoneBook::printOne(void) {
-  std::cout << "select index: ";
-  int index;
-  if (!(std::cin >> index))
-    this->exit("exit by EOF");
-  if (index < 0 || index >= this->size) {
+  const char *input = this->getInput("select index: ").c_str();
+  char *end;
+  int index = std::strtol(input, &end, 10);
+  if (*end != '\0' || index < 0 || index >= this->size) {
     std::cout << "invalid index! try again!\n";
     this->printOne();
     return ;

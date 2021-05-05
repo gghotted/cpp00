@@ -1,13 +1,13 @@
 #include "PhoneBook.hpp"
 
-int main(void)
-{
+int main(void) {
   PhoneBook phoneBook;
   std::string cmd;
   while (1)
   {
     std::cout << "cmd: ";
-    if (!(std::cin >> cmd))
+    std::getline(std::cin, cmd);
+    if (std::cin.eof())
       phoneBook.exit("\nexit by EOF");
     else if (cmd.compare("EXIT") == 0)
       phoneBook.exit("bye ~");
@@ -16,7 +16,7 @@ int main(void)
     else if (cmd.compare("SEARCH") == 0)
       phoneBook.search();
     else
-      std::cout << "invalid command! try again!\n";
+      std::cout << cmd << ": invalid command! try again!\n";
   }
   return 0;
 }
