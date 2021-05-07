@@ -69,6 +69,11 @@ std::string PhoneBook::getInput(const char *msg) {
   std::getline(std::cin, input);
   if (std::cin.eof())
     this->exit("\nexit by EOF");
+  if (input.length() == 0)
+  {
+    std::cout << "Empty are not allowed. Please enter again\n";
+    return this->getInput(msg);
+  }
   return input;
 }
 
