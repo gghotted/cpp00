@@ -18,6 +18,7 @@ class PhoneBook
   void printAll(void);
   void printOne(void);
   std::string getInput(const char *msg);
+  int parseIndex(std::string str);
 
   PhoneBookItem items[8];
   int size;
