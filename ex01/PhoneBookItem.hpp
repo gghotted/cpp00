@@ -26,9 +26,10 @@ class PhoneBookItem
   void printDetail(void);
 
   static void printColumn(std::string str, std::string end="\n");
-  static void printKeyVal(std::string key, std::string val);
 
  private:
+  static void printKeyVal(std::string key, std::string val);
+
   std::string firstName;
   std::string lastName;
   std::string nickname;
